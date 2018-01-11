@@ -1577,5 +1577,150 @@ return array(
             ),
             'responseModel' => 'getResponse',
         ),
+        'getUploads' => array(
+            'httpMethod' => 'GET',
+            'uri' => 'buckets/{projectId}/vaults/{vaultsId}/uploads.json',
+            'summary' => 'Get uploads' . PHP_EOL . '[Basecamp API: Get uploads](https://github.com/basecamp/bc3-api/blob/master/sections/uploads.md#get-uploads)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'vaultsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+        'getUpload' => array(
+            'httpMethod' => 'GET',
+            'uri' => 'buckets/{projectId}/uploads/{uploadsId}/uploads.json',
+            'summary' => 'Get an upload' . PHP_EOL . '[Basecamp API: Get an upload](https://github.com/basecamp/bc3-api/blob/master/sections/uploads.md#get-an-upload)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'uploadsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+        'createUpload' => array(
+            'httpMethod' => 'POST',
+            'uri' => 'buckets/{projectId}/vaults/{vaultsId}/uploads.json',
+            'summary' => 'Create an upload' . PHP_EOL . '[Basecamp API: Create an upload](https://github.com/basecamp/bc3-api/blob/master/sections/uploads.md#create-an-upload)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'vaultsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+        'updateUpload' => array(
+            'httpMethod' => 'PUT',
+            'uri' => 'buckets/{projectId}/uploads/{uploadsId}.json',
+            'summary' => 'Update an upload' . PHP_EOL . '[Basecamp API: Update an upload](https://github.com/basecamp/bc3-api/blob/master/sections/uploads.md#update-an-upload)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'uploadsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+        'getVaults' => array(
+            'httpMethod' => 'GET',
+            'uri' => 'buckets/{projectId}/vaults/{vaultsId}/vaults.json',
+            'summary' => 'Get vaults' . PHP_EOL . '[Basecamp API: Get vaults](https://github.com/basecamp/bc3-api/blob/master/sections/vaults.md#get-vaults)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'vaultsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+        'getVault' => array(
+            'httpMethod' => 'GET',
+            'uri' => 'buckets/{projectId}/vaults/{vaultsId}.json',
+            'summary' => 'Get a vault' . PHP_EOL . '[Basecamp API: Get a vault](https://github.com/basecamp/bc3-api/blob/master/sections/vaults.md#get-a-vault)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'vaultsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+        'createVault' => array(
+            'httpMethod' => 'POST',
+            'uri' => 'buckets/{projectId}/vaults/{vaultsId}/vaults.json',
+            'summary' => 'Create a vault' . PHP_EOL . '[Basecamp API: Create a vault](https://github.com/basecamp/bc3-api/blob/master/sections/vaults.md#create-a-vault)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'vaultsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+        'updateVault' => array(
+            'httpMethod' => 'PUT',
+            'uri' => 'buckets/{projectId}/vaults/{vaultsId}.json',
+            'summary' => 'Update a vault' . PHP_EOL . '[Basecamp API: Update a vault](https://github.com/basecamp/bc3-api/blob/master/sections/vaults.md#update-a-vault)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'vaultsId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
+
     )
 );
