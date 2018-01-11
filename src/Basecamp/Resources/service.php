@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    'serviceFullName'       => '37signals Basecamp API',
-    'serviceAbbreviation'   => 'Basecamp3 API',
+    'serviceFullName' => '37signals Basecamp API',
+    'serviceAbbreviation' => 'Basecamp3 API',
     'models' => array(
         'getResponse' => array(
             'type' => 'object',
@@ -15,7 +15,7 @@ return array(
         'createAttachment' => array(
             'httpMethod' => 'POST',
             'uri' => 'attachments.json?name={name}',
-            'summary'   => 'Create Attachment' . PHP_EOL . '[Basecamp API: Attachments](https://github.com/basecamp/bc3-api/blob/master/sections/attachments.md)',
+            'summary' => 'Create Attachment' . PHP_EOL . '[Basecamp API: Attachments](https://github.com/basecamp/bc3-api/blob/master/sections/attachments.md)',
             'parameters' => array(
                 'mimeType' => array(
                     'location' => 'header',
@@ -516,7 +516,7 @@ return array(
         'getMessageTypes' => array(
             'httpMethod' => 'GET',
             'uri' => 'buckets/{projectId}/categories.json',
-            'summary' => 'Get message types'. PHP_EOL . '[Basecamp API: Get message types](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#get-message-types)',
+            'summary' => 'Get message types' . PHP_EOL . '[Basecamp API: Get message types](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#get-message-types)',
             'parameters' => array(
                 'projectId' => array(
                     'location' => 'uri',
@@ -529,7 +529,7 @@ return array(
         'getMessageType' => array(
             'httpMethod' => 'GET',
             'uri' => 'buckets/{projectId}/categories/{categoryId}.json',
-            'summary' => 'Get a message type'. PHP_EOL . '[Basecamp API: Get a message type](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#get-a-message-type)',
+            'summary' => 'Get a message type' . PHP_EOL . '[Basecamp API: Get a message type](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#get-a-message-type)',
             'parameters' => array(
                 'projectId' => array(
                     'location' => 'uri',
@@ -547,7 +547,7 @@ return array(
         'createMessageType' => array(
             'httpMethod' => 'POST',
             'uri' => 'buckets/{projectId}/categories.json',
-            'summary' => 'Create a message type'. PHP_EOL . '[Basecamp API: Create a message type](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#create-a-message-type)',
+            'summary' => 'Create a message type' . PHP_EOL . '[Basecamp API: Create a message type](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#create-a-message-type)',
             'parameters' => array(
                 'projectId' => array(
                     'location' => 'uri',
@@ -560,7 +560,7 @@ return array(
         'updateMessageType' => array(
             'httpMethod' => 'PUT',
             'uri' => 'buckets/{projectId}/categories/{categoryId}.json',
-            'summary' => 'Update a message type'. PHP_EOL . '[Basecamp API: Update a message type](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#update-a-message-type)',
+            'summary' => 'Update a message type' . PHP_EOL . '[Basecamp API: Update a message type](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#update-a-message-type)',
             'parameters' => array(
                 'projectId' => array(
                     'location' => 'uri',
@@ -780,7 +780,7 @@ return array(
             'responseModel' => 'getResponse',
         ),
         'userInfo' => array(
-            'httpMethod' =>'GET',
+            'httpMethod' => 'GET',
             'uri' => 'my/profile.json',
             'summary' => 'Get my personal info' . PHP_EOL . '[Basecamp API: Get my personal info](https://github.com/basecamp/bc3-api/blob/master/sections/people.md#get-my-personal-info)',
             'responseModel' => 'getResponse',
@@ -839,7 +839,7 @@ return array(
                 'description' => array(
                     'location' => 'json',
                     'type' => 'string',
-                    'required' => false 
+                    'required' => false
                 )
             ),
             'responseModel' => 'getResponse',
@@ -1577,6 +1577,24 @@ return array(
             ),
             'responseModel' => 'getResponse',
         ),
+        'getTodoSet' => array(
+            'httpMethod' => 'GET',
+            'uri' => 'buckets/{projectId}/todosets/{todoSetId}.json',
+            'summary' => 'Get to-do set' . PHP_EOL . '[Basecamp API: Get to-do set](https://github.com/basecamp/bc3-api/blob/master/sections/todosets.md#get-to-do-set)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'todoSetId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
         'getUploads' => array(
             'httpMethod' => 'GET',
             'uri' => 'buckets/{projectId}/vaults/{vaultsId}/uploads.json',
@@ -1721,6 +1739,5 @@ return array(
             ),
             'responseModel' => 'getResponse',
         ),
-
     )
 );
