@@ -28,7 +28,7 @@ return array(
                     'location' => 'header',
                     'sentAs' => 'Content-Length',
                     'description' => 'The content length of data',
-                    'type' => integer,
+                    'type' => 'integer',
                     'required' => true,
                 ),
                 'name' => array(
@@ -54,7 +54,7 @@ return array(
         ),
         'getCampfire' => array(
             'httpMethod' => 'GET',
-            'uri' => 'buckets/{projectId}/chats/{campfireId}.json'
+            'uri' => 'buckets/{projectId}/chats/{campfireId}.json',
             'summary' => 'Get a campfire' . PHP_EOL . '[Basecamp API: Get a Campfire](https://github.com/basecamp/bc3-api/blob/master/sections/campfires.md#get-a-campfire)',
             'parameters' => array(
                 'projectId' => array(
@@ -768,7 +768,7 @@ return array(
         ),
         'getPerson' => array(
             'httpMethod' => 'GET',
-            'uri' => 'people/{personId}.json'
+            'uri' => 'people/{personId}.json',
             'summary' => 'Get person' . PHP_EOL . '[Basecamp API: Get person](https://github.com/basecamp/bc3-api/blob/master/sections/people.md#get-person)',
             'parameters' => array(
                 'personId' => array(
@@ -848,7 +848,7 @@ return array(
             'httpMethod' => 'GET',
             'uri' => 'buckets/{projectId}/questions/{questionId}/answers.json',
             'summary' => 'Get question answers' . PHP_EOL . '[Basecamp API: Get question answers](https://github.com/basecamp/bc3-api/blob/master/sections/question_answers.md#get-question-answers)',
-            'parameters' => arary(
+            'parameters' => array(
                 'projectId' => array(
                     'location' => 'uri',
                     'type' => 'integer',
@@ -866,7 +866,7 @@ return array(
             'httpMethod' => 'GET',
             'uri' => 'buckets/{projectId}/question_answers/{answerId}.json',
             'summary' => 'Get a question answer' . PHP_EOL . '[Basecamp API: Get a question answer](https://github.com/basecamp/bc3-api/blob/master/sections/question_answers.md#get-a-question-answer)',
-            'parameters' => arary(
+            'parameters' => array(
                 'projectId' => array(
                     'location' => 'uri',
                     'type' => 'integer',
