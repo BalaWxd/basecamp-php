@@ -1577,5 +1577,23 @@ return array(
             ),
             'responseModel' => 'getResponse',
         ),
+        'getTodoSet' => array(
+            'httpMethod' => 'GET',
+            'uri' => 'buckets/{projectId}/todosets/{todoSetId}.json',
+            'summary' => 'Get to-do set' . PHP_EOL . '[Basecamp API: Get to-do set](https://github.com/basecamp/bc3-api/blob/master/sections/todosets.md#get-to-do-set)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'todoSetId' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
+            'responseModel' => 'getResponse',
+        ),
     )
 );
