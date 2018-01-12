@@ -802,6 +802,7 @@ return array(
                     'required' => true,
                 ),
             ),
+            'responseModel' => 'getResponse',
         ),
         'createProject' => array(
             'httpMethod' => 'POST',
