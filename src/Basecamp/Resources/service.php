@@ -797,7 +797,7 @@ return array(
             'summary' => 'Get a project' . PHP_EOL . '[Basecamp API: Get a project](https://github.com/basecamp/bc3-api/blob/master/sections/projects.md#get-a-project)',
             'parameters' => array(
                 'projectId' => array(
-                    'locaiton' => 'uri',
+                    'location' => 'uri',
                     'type' => 'integer',
                     'required' => true,
                 ),

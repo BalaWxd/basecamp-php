@@ -66,7 +66,7 @@ class BasecampClient extends Client
                 'User-Agent' => sprintf('%s (%s)', $config['app_name'], $config['app_contact']),
                 'Authorization' => $authorization,
             ]
-        ];
+         ];
 
         $client = new self($httpOptions);
 
