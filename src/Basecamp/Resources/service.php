@@ -6,10 +6,22 @@ return array(
     'models' => array(
         'getResponse' => array(
             'type' => 'object',
-            'additionalProperties' => array(
-                'location' => 'json'
+            'properties' => array(
+                'total' => array(
+                    'location' => 'header',
+                    'type' => 'string',
+                    'sentAs' => 'X-Total-Count',
+                ),
+                'link' => array(
+                    'location' => 'header',
+                    'type' => 'string',
+                    'sendAs' => 'Link',
+                ),
             ),
-        ),
+            'additionalProperties' => array(
+                'location' => 'json',
+            ),
+        )
     ),
     'operations' => array(
         'createAttachment' => array(
