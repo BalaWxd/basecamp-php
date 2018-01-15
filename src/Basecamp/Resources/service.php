@@ -799,9 +799,16 @@ return array(
         ),
         'getProjects' => array(
             'httpMethod' => 'GET',
-            'uri' => 'projects.json',
+            'uri' => 'projects.json?page={page}',
             'summary' => 'Get all projects' . PHP_EOL . '[Basecamp API: Get all projects](https://github.com/basecamp/bc3-api/blob/master/sections/projects.md#get-projects)',
             'responseModel' => 'getResponse',
+            'parameters' => array(
+                'page' => array(
+                    'location' => 'uri',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+            ),
         ),
         'getProject' => array(
             'httpMethod' => 'GET',
