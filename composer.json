@@ -1,5 +1,5 @@
 {
-    "name": "xiaod/basecamp3-php",
+    "name": "BalaWxd/basecamp3-php",
     "description": "The Basecamp 3 API",
     "type": "library",
     "keywords": ["basecamp3", "37signals", "api"],
