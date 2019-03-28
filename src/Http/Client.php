@@ -3,6 +3,7 @@
 namespace Basecamp\Http;
 
 use GuzzleHttp\Client as GuzzleClient;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class Client
 {
@@ -25,7 +26,7 @@ class Client
     public function __construct($config = [], $client = null, $clientOptions = [])
     {
         if (! isset($config['account_id'], $config['app_name'], $config['app_contact'])) {
-            throw new InvalidArgumentException("Config must contain account_id, app_name and app_contact. See: https://github.com/basecamp/bc3-api (Identifying your application).");
+            throw new \InvalidArgumentException("Config must contain account_id, app_name and app_contact. See: https://github.com/basecamp/bc3-api (Identifying your application).");
         }
 
         $default = ['auth' => 'http', 'token' => null, 'username' => null, 'password' => null];
@@ -34,18 +35,18 @@ class Client
 
         if ($config['auth'] === 'http') {
             if (! isset($config['username'], $config['password'])) {
-                throw new InvalidArgumentException("Config must contain username and password when using http auth");
+                throw new \InvalidArgumentException("Config must contain username and password when using http auth");
             }
             $authorization = 'Basic ' . base64_encode($config['username'] . ':' . $config['password']);
         }
         if ($config['auth'] === 'oauth') {
             if (! isset($config['token'])) {
-                throw new InvalidArgumentException("Config must contain token when using oauth");
+                throw new \InvalidArgumentException("Config must contain token when using oauth");
             }
             $authorization = sprintf('Bearer %s', $config['token']);
         }
         if (! isset($authorization)) {
-            throw new InvalidArgumentException("Config must contain valid authentication method");
+            throw new \InvalidArgumentException("Config must contain valid authentication method");
         }
 
         $defaultClientOptions = [
@@ -75,18 +76,21 @@ class Client
     public function request($method, $url, $options = [], $query_string = null)
     {
         $options = array_merge($this->clientOptions, $options);
-        
+
         if ($query_string) {
             $url .= "?{$query_string}";
         }
+
+        // Remove left slash if there is
+        $url = ltrim($url, '/');
 
         try {
             return $this->client->request($method, $url, $options);
         }
         catch (\GuzzleHttp\Exception\BadResponseException $e) {
-            throw new BadRequest(\GuzzleHttp\Psr7\str($e->getResponse()), $e->getCode(), $e);
+            throw new BadRequestHttpException(\GuzzleHttp\Psr7\str($e->getResponse()), $e, $e->getCode());
         } catch (\Exception $e) {
-            throw new BadRequest($e->getMessage(), $e->getCode(), $e);
+            throw new BadRequestHttpException($e->getMessage(), $e, $e->getCode());
         }
 
     }

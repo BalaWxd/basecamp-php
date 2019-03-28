@@ -10,12 +10,15 @@ class Project extends Resource
     /**
      * @param string $status
      *  archived, trashed or leave empty to get all.
+     *
+     * @return
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAll($status = '')
     {
         $endpoint = "/projects.json";
         if ($status) {
-            $endpoint .= '?status' = $status;
+            $endpoint .= "?status={$status}";
         }
         return $this->client->request('get', $endpoint);
     }
