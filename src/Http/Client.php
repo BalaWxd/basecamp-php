@@ -85,7 +85,7 @@ class Client
         $url = ltrim($url, '/');
 
         try {
-            return $this->client->request($method, $url, $options);
+            return new Response($this->client->request($method, $url, $options));
         }
         catch (\GuzzleHttp\Exception\BadResponseException $e) {
             throw new BadRequestHttpException(\GuzzleHttp\Psr7\str($e->getResponse()), $e, $e->getCode());
